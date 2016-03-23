@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="scrapper">
+  <head>
+    <meta charset="utf-8">
+    <title>Scrapper</title>
+    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body ng-controller="MainCtrl" class="container" style="margin-top:20px">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Cover</th>
+          <th>KSA</th>
+          <th>EG</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="show in shows">
+          <td>{{show.title}}</td>
+          <td><img src="http://www.mbc.net/{{show.image}}" ></td>
+          <td>{{show.startKSA}}</td>
+          <td>{{show.startEG}}</td>
+          <td>{{show.description}}</td>
+        </tr>
+      </tbody>
+    <table>
+  </body>
+  <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/app.js" charset="utf-8"></script>
+</html>

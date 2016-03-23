@@ -1,0 +1,8 @@
+{
+  "name": "MBC Schedule scrapper",
+  "author": "Mohamed Labouardy",
+  "dependencies": {
+    "angular": "~1.5.2",
+    "bootstrap-css": "~3.3.6"
+  }
+}
