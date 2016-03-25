@@ -1,21 +1,20 @@
-scrapper-service:
-  container_name: scrapper-service
-  image: mlabouardy/scrapper-service
-  ports:
-    - "3000:3000"
-  volumes:
-    - $PWD/csv:/usr/src/app/csv
-
-config-service:
+config-service: 
   container_name: config-service
   image: mlabouardy/config-service
-  ports:
+  ports: 
     - "9000:9000"
-
-schedule-service:
+schedule-service: 
   container_name: schedule-service
   image: mlabouardy/schedule-service
-  ports:
+  ports: 
     - "8080:8080"
-  volumes:
-    - $PWD/csv/schedule.csv:/data/schedule.csv
+  restart: always
+  volumes: 
+    - "$PWD/csv:/data"
+scrapper-service: 
+  container_name: scrapper-service
+  image: mlabouardy/scrapper-service
+  ports: 
+    - "3000:3000"
+  volumes: 
+    - "$PWD/csv:/usr/src/app/csv"
