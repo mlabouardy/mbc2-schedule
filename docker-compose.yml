@@ -3,6 +3,7 @@ config-service:
   image: mlabouardy/config-service
   ports: 
     - "9000:9000"
+ 
 schedule-service: 
   container_name: schedule-service
   image: mlabouardy/schedule-service
@@ -11,6 +12,7 @@ schedule-service:
   restart: always
   volumes: 
     - "$PWD/csv:/data"
+    
 scrapper-service: 
   container_name: scrapper-service
   image: mlabouardy/scrapper-service
