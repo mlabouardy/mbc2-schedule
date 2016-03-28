@@ -32,6 +32,7 @@ public class Home extends ActionBarActivity implements ActionBar.TabListener{
     private Collection<Schedule> schedules= Collections.emptyList();
     private Storage storage= Storage.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
