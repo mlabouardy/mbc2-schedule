@@ -9,6 +9,7 @@ import java.util.Locale;
 /**
  * Created by mlabouardy on 28/03/16.
  */
+
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     public static final String DAYS[]={"Monday","Tuesday","Wednesday","Tuersday","Friday","Saturday","Sunday"};
