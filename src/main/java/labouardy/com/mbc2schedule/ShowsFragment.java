@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,9 +13,14 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import labouardy.com.mbc2schedule.handler.ShowAdapter;
 import labouardy.com.mbc2schedule.handler.Storage;
 import labouardy.com.mbc2schedule.model.Schedule;
+import labouardy.com.mbc2schedule.model.Show;
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.GsonConverterFactory;
@@ -25,6 +31,11 @@ import retrofit.Retrofit;
  * Created by mlabouardy on 28/03/16.
  */
 public class ShowsFragment extends Fragment implements Callback<Schedule>{
+    @Bind(R.id.shows)
+    ListView lv;
+
+    private List<Show> shows=Collections.emptyList();
+    private ShowAdapter adapter;
 
     public ShowsFragment build(String day){
         ShowsFragment fragment=new ShowsFragment();
@@ -36,6 +47,7 @@ public class ShowsFragment extends Fragment implements Callback<Schedule>{
 
 
     public ShowsFragment() {
+
     }
 
     @Override
@@ -44,6 +56,8 @@ public class ShowsFragment extends Fragment implements Callback<Schedule>{
         View rootView = inflater.inflate(R.layout.shows, container, false);
         Bundle args = getArguments();
         String day=args.getString("day");
+
+        ButterKnife.bind(this, rootView);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://vps259935.ovh.net:8080")
@@ -56,8 +70,8 @@ public class ShowsFragment extends Fragment implements Callback<Schedule>{
         //asynchronous call
         call.enqueue(this);
 
-        TextView name=(TextView) rootView.findViewById(R.id.name);
-        TextView date=(TextView) rootView.findViewById(R.id.date);
+        adapter=new ShowAdapter(this.getActivity(), shows);
+        lv.setAdapter(adapter);
 
         return rootView;
     }
@@ -69,7 +83,9 @@ public class ShowsFragment extends Fragment implements Callback<Schedule>{
 
     @Override
     public void onResponse(Response<Schedule> response, Retrofit retrofit) {
-        Toast.makeText(this.getActivity(),"Size:"+response.body().getName(),Toast.LENGTH_SHORT).show();
+        shows=response.body().getShows();
+        adapter=new ShowAdapter(this.getActivity(), shows);
+        lv.setAdapter(adapter);
     }
 
     @Override

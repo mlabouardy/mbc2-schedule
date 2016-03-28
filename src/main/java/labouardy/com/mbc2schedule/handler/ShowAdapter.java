@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import labouardy.com.mbc2schedule.R;
 import labouardy.com.mbc2schedule.model.Show;
 
@@ -23,10 +24,21 @@ public class ShowAdapter extends BaseAdapter {
     private List<Show> shows;
 
     @Bind(R.id.eg)
-    private TextView egTV;
+    TextView egTV;
 
     @Bind(R.id.ksa)
-    private TextView ksaTV;
+    TextView ksaTV;
+
+    @Bind(R.id.description)
+    TextView descriptionTV;
+
+    @Bind(R.id.name)
+    TextView nameTV;
+
+    public ShowAdapter(Activity activity, List<Show> shows){
+        this.activity=activity;
+        this.shows=shows;
+    }
 
     @Override
     public int getCount() {
@@ -47,9 +59,15 @@ public class ShowAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
             LayoutInflater mInflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            view = mInflater.inflate(R.layout.shows, null);
+            view = mInflater.inflate(R.layout.show, null);
         }
+        ButterKnife.bind(this, view);
 
+        Show show=shows.get(i);
+        ksaTV.setText(show.getKsa());
+        egTV.setText(show.getEg());
+        descriptionTV.setText(show.getDescription());
+        nameTV.setText(show.getName());
         return view;
     }
 }

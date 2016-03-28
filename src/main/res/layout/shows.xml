@@ -5,63 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_margin="5dp"
-        android:layout_width="90dp"
-        android:layout_height="120dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/gladiator"/>
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Alone"
-        android:layout_toRightOf="@+id/image"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="15dp"
-        android:singleLine="true"
-        android:textColor="#000"
-        android:textSize="15dp"/>
-
-    <TextView
-        android:id="@+id/ksa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/image"
-        android:layout_below="@+id/name"
-        android:text="Action"
-        android:padding="2dp"
-        android:textColor="#FFF"
-        android:textSize="10dp"
-        android:layout_marginRight="2dp"
-        android:background="#D32F2F"/>
-
-    <TextView
-        android:id="@+id/eg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ksa"
-        android:layout_below="@+id/name"
-        android:text="Science Fiction"
-        android:padding="2dp"
-        android:textColor="#FFF"
-        android:textSize="10dp"
-        android:layout_marginRight="2dp"
-        android:background="#4CAF50"/>
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/image"
-        android:layout_below="@+id/ksa"
-        android:textSize="12dp"
-        android:layout_marginRight="5dp"
-        android:ellipsize="end"
-        android:maxLines="5"
-        android:text="Interstellar chronicles the adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstella"/>
-
-
+    <ListView
+        android:id="@+id/shows"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        ></ListView>
 </RelativeLayout>
