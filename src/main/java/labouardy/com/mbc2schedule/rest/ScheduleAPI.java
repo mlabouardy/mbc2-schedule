@@ -1,4 +1,4 @@
-package labouardy.com.mbc2schedule;
+package labouardy.com.mbc2schedule.rest;
 
 import java.util.Collection;
 

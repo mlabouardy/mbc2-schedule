@@ -16,110 +16,50 @@ public class Show implements Serializable{
     private String eg;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    /**
-     *
-     * @return
-     * The id
-     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     *
-     * @param id
-     * The id
-     */
     public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     *
-     * @return
-     * The name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     *
-     * @param name
-     * The name
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     *
-     * @return
-     * The image
-     */
     public String getImage() {
         return image;
     }
 
-    /**
-     *
-     * @param image
-     * The image
-     */
     public void setImage(String image) {
         this.image = image;
     }
 
-    /**
-     *
-     * @return
-     * The description
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     *
-     * @param description
-     * The description
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     *
-     * @return
-     * The ksa
-     */
     public String getKsa() {
         return ksa;
     }
 
-    /**
-     *
-     * @param ksa
-     * The ksa
-     */
     public void setKsa(String ksa) {
         this.ksa = ksa;
     }
 
-    /**
-     *
-     * @return
-     * The eg
-     */
     public String getEg() {
         return eg;
     }
 
-    /**
-     *
-     * @param eg
-     * The eg
-     */
     public void setEg(String eg) {
         this.eg = eg;
     }

@@ -4,9 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import java.util.Locale;
-
-import labouardy.com.mbc2schedule.ShowsFragment;
+import labouardy.com.mbc2schedule.fragment.ShowsFragment;
 
 /**
  * Created by mlabouardy on 28/03/16.

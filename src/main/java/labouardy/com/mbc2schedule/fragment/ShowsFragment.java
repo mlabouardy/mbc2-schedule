@@ -1,4 +1,4 @@
-package labouardy.com.mbc2schedule;
+package labouardy.com.mbc2schedule.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,19 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import labouardy.com.mbc2schedule.R;
+import labouardy.com.mbc2schedule.rest.ScheduleAPI;
 import labouardy.com.mbc2schedule.handler.ShowAdapter;
-import labouardy.com.mbc2schedule.handler.Storage;
 import labouardy.com.mbc2schedule.model.Schedule;
 import labouardy.com.mbc2schedule.model.Show;
 import retrofit.Call;
