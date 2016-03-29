@@ -1,10 +1,12 @@
-package labouardy.com.mbc2schedule;
+package labouardy.com.mbc2schedule.handler;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.Locale;
+
+import labouardy.com.mbc2schedule.ShowsFragment;
 
 /**
  * Created by mlabouardy on 28/03/16.
